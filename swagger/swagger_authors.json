@@ -1,0 +1,205 @@
+{
+  "definitions": {
+    "Author": {
+      "properties": {
+        "author_id": {
+          "type": "integer"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "author_id",
+        "first_name",
+        "last_name"
+      ],
+      "type": "object"
+    },
+    "Book": {
+      "properties": {
+        "author": {
+          "$ref": "#/definitions/Author"
+        },
+        "id": {
+          "readOnly": true,
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "author",
+        "title"
+      ],
+      "type": "object"
+    }
+  },
+  "info": {
+    "title": "Book",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/authors/": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "Author id",
+            "in": "path",
+            "name": "author_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "summary": "---",
+        "tags": [
+          "authors"
+        ]
+      },
+      "get": {
+        "parameters": [
+          {
+            "description": "Author id",
+            "in": "path",
+            "name": "author_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "summary": "---",
+        "tags": [
+          "authors"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "description": "New Author",
+            "in": "body",
+            "name": "new author params",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          }
+        },
+        "summary": "---",
+        "tags": [
+          "authors"
+        ]
+      }
+    },
+    "/api/authors/{author_id}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "Author id",
+            "in": "path",
+            "name": "author_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "summary": "---",
+        "tags": [
+          "authors"
+        ]
+      },
+      "get": {
+        "parameters": [
+          {
+            "description": "Author id",
+            "in": "path",
+            "name": "author_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "summary": "---",
+        "tags": [
+          "authors"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "description": "New Author",
+            "in": "body",
+            "name": "new author params",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Author"
+            }
+          }
+        },
+        "summary": "---",
+        "tags": [
+          "authors"
+        ]
+      }
+    }
+  },
+  "swagger": "2.0"
+}

@@ -1,0 +1,17 @@
+---
+summary: Delete a book
+tags:
+  - books
+parameters:
+  - name: book_id
+    description: A book id
+    in: path
+    required: true
+    type: integer
+responses:
+  200:
+    description: Success
+    schema:
+      $ref: '#/definitions/Book'
+  404:
+    description: Not Found

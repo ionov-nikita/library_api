@@ -1,0 +1,14 @@
+---
+summary: Update a book
+tags:
+  - books
+parameters:
+  - name: book_data
+    in: body
+    schema:
+      $ref: '#/definitions/Book'
+responses:
+  201:
+    description: Success
+    schema:
+      $ref: '#/definitions/Book'
